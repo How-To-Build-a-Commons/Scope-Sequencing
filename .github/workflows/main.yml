@@ -55,7 +55,7 @@ jobs:
           files: ScopeSequencing-${{ github.ref_name }}.pdf
           draft: false
           prerelease: false
-          name: Release ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
           # This action automatically handles existing releases by updating them
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
