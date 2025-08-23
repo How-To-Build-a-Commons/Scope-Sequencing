@@ -5,43 +5,57 @@ on:
          - '*'
 
 permissions:
-  contents: write  # Required to create releases
+  contents: write
 
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository and submodules
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
             submodules: recursive
-      - run: sudo add-apt-repository -y ppa:sunderme/texstudio
-
-      - run: sudo apt install texlive-latex-extra
-      - run: echo $PWD
-      - run: ls -al ./
-      - run: ls -al ../
-      - run: sed -i 's/VERSIONNUMBER/${{  github.ref_name }}/g' ScopeSequencing.tex
-      - run: pdflatex -jobname=ScopeSequencing-${{  github.ref_name }} ScopeSequencing.tex
-      - run: ls -al .
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-              draft: false
-              prerelease: false
-              release_name: ${{ steps.get_version.outputs.VERSION }}
-              tag_name: ${{ github.ref }}
+            
+      - name: Check if release exists
+        id: check_release
+        run: |
+          if gh release view ${{ github.ref_name }} > /dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "Release for tag ${{ github.ref_name }} already exists - will update it"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Release for tag ${{ github.ref_name }} does not exist - will create it"
+          fi
         env:
-              GITHUB_TOKEN: ${{ github.token }}
-              
-
-      - name: Upload Keywords
-        uses: actions/upload-release-asset@v1
-        env:
-              GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            
+      - name: Install LaTeX dependencies
+        run: |
+          sudo add-apt-repository -y ppa:sunderme/texstudio
+          sudo apt install texlive-latex-extra
+          
+      - name: Debug - Show current directory
+        run: |
+          echo $PWD
+          ls -al ./
+          ls -al ../
+          
+      - name: Replace version in LaTeX file
+        run: sed -i 's/VERSIONNUMBER/${{ github.ref_name }}/g' ScopeSequencing.tex
+        
+      - name: Generate PDF
+        run: pdflatex -jobname=ScopeSequencing-${{ github.ref_name }} ScopeSequencing.tex
+        
+      - name: Debug - Show generated files
+        run: ls -al .
+        
+      - name: Create or Update Release
+        uses: softprops/action-gh-release@v1
         with:
-              upload_url: ${{ steps.create_release.outputs.upload_url }}
-              asset_path: ScopeSequencing-${{  github.ref_name }}.pdf
-              asset_name: ScopeSequencing-${{  github.ref_name }}.pdf
-              asset_content_type: application/binary
+          files: ScopeSequencing-${{ github.ref_name }}.pdf
+          draft: false
+          prerelease: false
+          name: Release ${{ github.ref_name }}
+          # This action automatically handles existing releases by updating them
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
