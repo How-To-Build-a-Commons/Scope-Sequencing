@@ -5,3 +5,6 @@ We recognize the existence of a Common Pool Resource bequeathed to us all by our
 ## Scope & Sequencing
 This repository hosts the Scope & Sequencing document for the How To Build a Commons curriculum
 
+## Governance Structure of Steering Committee
+TBD
+
