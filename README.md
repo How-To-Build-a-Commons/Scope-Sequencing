@@ -10,7 +10,7 @@ TBD
 
 ## Schedule of First Run
 One hour long sessions, starting August 16, 2025.
-This section covers material actually covered and when. This schedule is here rather than in the S&S doc because the S&S doc is meant to reflect a proposed sequencing for future classes.
+This schedule reflects the first run under development. The [Scope & Sequencing document release](https://github.com/How-To-Build-a-Commons/Scope-Sequencing/releases/latest) will integrate experience from the first run and record class sequencing decisions for the future.
 
 ### Session 1
 Introduction
