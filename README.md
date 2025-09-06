@@ -26,3 +26,6 @@ Consensus process 1 (Graeber)
 Conflict Resolution 1 - clear communication, emotions in meetings  
 Types of Communities brief intro (Ludwig)  
 - ended early for community event  
+
+### Session 5
+Conflict Resolution 2 - ???
