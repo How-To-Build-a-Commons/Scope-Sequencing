@@ -24,5 +24,6 @@ Consensus process 1 (Graeber)
 
 ### Session 4
 Conflict Resolution 1 - clear communication, emotions in meetings  
-Types of Communities brief intro (Ludwig)  
+Types of Communities brief intro (Ludwig) 
+- presented this public but anonymous CIVS poll: https://civs1.civs.us/cgi-bin/vote.pl?id=E_c8949afdd4be9e43&akey=8bd6c23f5a658b91  
 - ended early for community event  
