@@ -23,8 +23,6 @@ Ostronomics 2
 Consensus process 1 (Graeber)
 
 ### Session 4
-Consensus process 2  
-Types of Communities (Ludwig)
-
-### Session 5
-What is Property? (Locke, Bruenig, US Constitution)
+Conflict Resolution 1 - clear communication, emotions in meetings  
+Types of Communities brief intro (Ludwig)  
+- ended early for community event  
