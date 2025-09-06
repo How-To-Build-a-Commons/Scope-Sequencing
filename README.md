@@ -25,6 +25,7 @@ Consensus process 1 (Graeber)
 ### Session 4
 Consensus process 2 
 Types of Communities (Ludwig)
+- present this public but anonymous CIVS poll: https://civs1.civs.us/cgi-bin/vote.pl?id=E_c8949afdd4be9e43&akey=8bd6c23f5a658b91
 
 ### Session 5
 What is Property? (Locke, Bruenig, US Constitution)
