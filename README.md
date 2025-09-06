@@ -28,4 +28,5 @@ Types of Communities brief intro (Ludwig)
 - ended early for community event  
 
 ### Session 5
-Conflict Resolution 2 - ???
+Conflict Resolution 2 - @madhephaestus, @JansenSmith, @dnlr-p each pick one tactic/strategy used in recent events that we appreciate/respect/value to highlight as conflict resolution mechanisms  
+Types of Communities checkin, informed by CIVS poll
