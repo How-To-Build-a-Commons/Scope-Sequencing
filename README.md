@@ -13,7 +13,7 @@ One hour long sessions, starting August 16, 2025.
 This schedule reflects the first run under development. The [Scope & Sequencing document release](https://github.com/How-To-Build-a-Commons/Scope-Sequencing/releases/latest) will integrate experience from the first run and record class sequencing decisions for the future.
 
 ### Session 1
-Introduction
+Introduction  
 Ostronomics 1 (Ostrom)
 
 ### Session 2
@@ -23,9 +23,7 @@ Ostronomics 2
 Consensus process 1 (Graeber)
 
 ### Session 4
-Consensus process 2 
-Types of Communities (Ludwig)
-- present this public but anonymous CIVS poll: https://civs1.civs.us/cgi-bin/vote.pl?id=E_c8949afdd4be9e43&akey=8bd6c23f5a658b91
-
-### Session 5
-What is Property? (Locke, Bruenig, US Constitution)
+Conflict Resolution 1 - clear communication, emotions in meetings  
+Types of Communities brief intro (Ludwig) 
+- presented this public but anonymous CIVS poll: https://civs1.civs.us/cgi-bin/vote.pl?id=E_c8949afdd4be9e43&akey=8bd6c23f5a658b91  
+- ended early for community event  
