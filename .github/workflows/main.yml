@@ -32,7 +32,7 @@ jobs:
       - name: Install LaTeX dependencies
         run: |
           sudo add-apt-repository -y ppa:sunderme/texstudio
-          sudo apt install texlive-latex-extra
+          sudo apt install texlive-latex-extra bookletimposer
           
       - name: Debug - Show current directory
         run: |
@@ -46,13 +46,16 @@ jobs:
       - name: Generate PDF
         run: pdflatex -jobname=ScopeSequencing-${{ github.ref_name }} ScopeSequencing.tex
         
+      - name: Generate Booklet PDF
+        run: bookletimposer -a -o ScopeSequencing-${{ github.ref_name }}-booklet.pdf ScopeSequencing-${{ github.ref_name }}.pdf      
+        
       - name: Debug - Show generated files
         run: ls -al .
         
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ScopeSequencing-${{ github.ref_name }}.pdf,Building-Belonging-FINAL-E-book-iwmkwg.epub
+          files: ScopeSequencing-${{ github.ref_name }}.pdf,ScopeSequencing-${{ github.ref_name }}-booklet.pdf,Building-Belonging-FINAL-E-book-iwmkwg.epub
           draft: false
           prerelease: false
           name: ${{ github.ref_name }}
