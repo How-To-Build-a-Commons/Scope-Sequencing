@@ -52,7 +52,7 @@ jobs:
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ScopeSequencing-${{ github.ref_name }}.pdf
+          files: ScopeSequencing-${{ github.ref_name }}.pdf Building-Belonging-FINAL-E-book-iwmkwg.epub
           draft: false
           prerelease: false
           name: ${{ github.ref_name }}
