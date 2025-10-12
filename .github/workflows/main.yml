@@ -47,7 +47,7 @@ jobs:
         run: pdflatex -jobname=ScopeSequencing-${{ github.ref_name }} ScopeSequencing.tex
         
       - name: Generate Booklet PDF
-        run: bookletimposer -a -o ScopeSequencing-${{ github.ref_name }}-booklet.pdf ScopeSequencing-${{ github.ref_name }}.pdf      
+        run: bookletimposer -b -a -f "Letter" -p "2x1"  -o  ScopeSequencing-${{ github.ref_name }}-booklet.pdf ScopeSequencing-${{ github.ref_name }}.pdf      
         
       - name: Debug - Show generated files
         run: ls -al .
