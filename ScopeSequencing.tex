@@ -3,15 +3,6 @@
 \usepackage{lipsum} % for filler text
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\usepackage{qrcode}
-\newlist{todolist}{itemize}{2}
-\setlist[todolist]{label=$\square$}
-\usepackage{easylist}
-\fancyfoot{} % clear all footer fields
-\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-\fancyfoot[RE,LO]{Version VERSIONNUMBER} % other info in "inner" position of footer line
-\usepackage{hyperref}
-
 \usepackage{geometry}
 \geometry{
 	top=1in,
@@ -19,6 +10,16 @@
 	left=1in,
 	right=1in
 }
+\usepackage{qrcode}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{easylist}
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{How To Build A Commons vVERSIONNUMBER} % other info in "inner" position of footer line
+\usepackage{hyperref}
+
+
 \usepackage{multicol}
 
 \begin{document}
@@ -45,7 +46,7 @@
 	
 	\qrcode{https://github.com/How-To-Build-a-Commons/Scope-Sequencing/releases/download/0.0.11/Building-Belonging-FINAL-E-book-iwmkwg.epub}
 	
-	\item \textbf{Debt: The First 500 Years by David Graeber's  (Chapter 11)} 
+	\item \textbf{Debt: The First 5000 Years by David Graeber's  (Chapter 11)} 
 	
 	\qrcode{https://files.libcom.org/files/__Debt__The_First_5_000_Years.pdf}
 	
