@@ -1,211 +1,313 @@
 \documentclass{article}
 \usepackage{enumitem,amssymb}
 \usepackage{lipsum} % for filler text
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-
+\usepackage{geometry}
+\geometry{
+	paperwidth=5.5in,
+	paperheight=8.5in,
+	top=0.25in,
+	bottom=0.5in,
+	left=0.25in,
+	right=0.25in,
+	footskip=20pt  % Reserve space for footer
+}
+\usepackage{qrcode}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
 \usepackage{easylist}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-\fancyfoot[RE,LO]{Version VERSIONNUMBER} % other info in "inner" position of footer line
+\fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
+\usepackage{hyperref}
+\usepackage{tikz}
 
+\newcommand{\linedpage}{%
+	\noindent
+	\foreach \n in {1,...,10}{%
+		\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	}
+}
+
+\usepackage{multicol}
 
 \begin{document}
 	
-{\huge \textbf{How To Build a Commons}}
-
-\vspace{1cm}
-
-{\Large \textbf{Scope \& Sequencing}}
-
-\vspace{1cm}
-
-{\huge \textbf{Course Philosophy}}
-\vspace{1cm}
-
-COURSEPHILOSOPHY
-
-LEARNINGPRINCIPLE1
-
-LEARNINGPRINCIPLE2
-
-LEARNINGPRINCIPLE3
-
-COURSEOBJECTIVE
-
+{\huge \textbf{Building A Common}}
 \pagebreak
 
-{\huge \textbf{Pedagogical Rationale}}
 \vspace{1cm}
 
-PEDAGOGICALRATIONALE
+{\huge \textbf{Referenced Readings}}
 
-METHODOLOGYJUSTIFICATION
-
+\begin{multicols}{2}
 \begin{enumerate}
-\item REASON1
+	
+	\item \textbf{ Governing the Commons  by Ellinor Ostrum (Specifically p90-p102) } 
+	
+	\qrcode[height=30mm]{https://archive.org/details/governingthecommons}
 
-\item REASON2
+	\item \textbf{The Democracy Project by David Graeber  (Specifically Chapter 2)  "Consensus"} 
+	
+	\qrcode[height=30mm]{https://theanarchistlibrary.org/library/david-graeber-the-democracy-project#toc21}
+	
+	\item \textbf{Building Belonging by Yana Ludwig} 
+	
+	\qrcode[height=30mm]{https://github.com/How-To-Build-a-Commons/Scope-Sequencing/releases/download/0.0.11/Building-Belonging-FINAL-E-book-iwmkwg.epub}
+	
+	\item \textbf{Debt: The First 5000 Years by David Graeber  (Chapter 11)} 
+	
+	\qrcode[height=30mm]{https://files.libcom.org/files/__Debt__The_First_5_000_Years.pdf}
+	
+	\item \textbf{"Violence Vouchers: a descriptive account of property" by Matt Bruenig} 
+	
+	\qrcode[height=30mm]{https://mattbruenig.com/2014/03/28/violence-vouchers-a-descriptive-account-of-property/}
+	
+	\item \textbf{Source Of This Document}
+	
+	\qrcode[height=30mm]{https://github.com/How-To-Build-a-Commons/Scope-Sequencing/releases/tag/VERSIONNUMBER}
+	
+	 
 
-\item REASON3
-
-\item REASON4
-
-\item REASON5
- 
+	
 \end{enumerate}
+\end{multicols}
 
 \pagebreak
+{\huge \textbf{What is a Common?}}
 
-{\huge \textbf{Course Overview}}
-\vspace{1cm}
+\textbf{Governing the Commons by Ellinor Ostrum Table 3.1}
 
-\textbf{Course Description:} COURSEDESCRIPTION
+
+Design principles illustrated by long-enduring CPR institutions
+
+\textbf{1. Clearly defined boundaries}
+
+Individuals or households who have rights to withdraw resource units from the CPR must be clearly defined, as must the boundaries of the CPR itself.
+
+\textbf{2. Congruence between appropriation and provision rules and local conditions}
+
+ Appropriation rules restricting time, place, technology, and/or quantity of resource units are related to local conditions and to provision rules requiring labor, material, and/or money.
+
+\textbf{3. Collective-choice arrangements}
+
+Most individuals affected by the operational rules can participate in modifying the operational rules.
+
+\textbf{4. Monitoring}
+
+Monitors, who actively audit CPR conditions and appropriator behavior, are accountable to the appropriators or are the appropriators.
+
+\textbf{5. Graduated sanctions}
+
+Appropriators who violate operational rules are likely to be assessed graduated sanctions (depending on the seriousness and context of the offense) by other appropriators, by officials accountable to these appropriators, or by both.
+
+\textbf{6. Conflict-resolution mechanisms}
+
+Appropriators and their officials have rapid access to low-cost local arenas to resolve conflicts among appropriators or between appropriators and officials.
+
+\textbf{7. Minimal recognition of rights to organize}
+
+The rights of appropriators to devise their own institutions are not challenged by external governmental authorities.
+
+For CPRs that are parts of larger systems:
+
+\textbf{8. Nested enterprises}
+
+Appropriation, provision, monitoring, enforcement, conflict resolution, and governance activities are organized in multiple layers of nested enterprises.
+
+
+
+
+
+\pagebreak
+{\huge \textbf{What is Consensus Process?}}
+
+Consensus is a process where everyone should be able to weigh in equally on a decision, and no one should be bound by a decision they detest."
+this boils doing in practice to: Everyone who feels they have something relevant to say about a proposal ought to have their perspectives carefully considered.
+
+Everyone who has strong concerns or objections should have those concerns or objections taken into account and, if possible, addressed in the final form of the proposal.
+
+Anyone who feels a proposal violates a fundamental principle shared by the group should have the opportunity to veto (“block”) that proposal.
+
+No one should be forced to go along with a decision to which they did not assent.
+
+1) someone makes a proposal for a certain course of action
+
+2) the facilitator asks for clarifying questions to make sure everyone understands precisely what is being proposed
+
+3) the facilitator asks for concerns
+
+3.1) during the discussion those with concerns may suggest friendly amendments to the proposal to address the concern, which the person originally bringing the proposal may or may not adopt
+
+3.2) there may or may not be a temperature check about the proposal, an amendment, or the seriousness of a concern
+
+3.3) in the course of this the proposal might be scotched, reformulated, combined with other proposals, broken into pieces, or tabled for later discussion.
+
+4) the facilitator checks for consensus by:
+
+4.1) asking if there are any stand-asides. By standing aside one is saying “I don’t like this idea, and wouldn’t take part in the action, but I’m not willing to stop others from doing so”. It is always important to allow all those who stand aside to have a chance to explain why they are doing so.
+
+4.2) asking if there are any blocks. A block is not a “no” vote. It is much more like a veto. Perhaps the best way to think of it is that it allows anyone in the group to temporarily don the robes of a Supreme Court justice and strike down a piece of legislation they consider unconstitutional; or, in this casein violation of the fundamental principles of unity or purpose of being of the group.{42},
+Footnote {42} I should note that the usual language in Occupy Wall Street is that a block has to be based on a “moral, ethical, or safety concern that’s so strong you’d consider leaving the movement were the proposal to go forward”.
+
+\pagebreak
+{\huge \textbf{Why Build a Common?}}
+
+From the Yana Ludwig reading:
 
 \begin{enumerate}
-\item MODULE1TITLE
-
-\item MODULE2TITLE
-
-\item MODULE3TITLE
-
-\item MODULE4TITLE
-
-\item MODULE5TITLE
+	\item Spiritual or Religious
+	\item 	Cultural Preservation
+	\item 	Social Experimentation
+	\item 	Service-based
+	\item 	Economic Security
+	\item 	Identity-based Safe Havens
+	\item 	Lifestyle and Comfort Enhancement
+	\item 	Ecological Sustainability
 \end{enumerate}
 
-ASSESSMENTOVERVIEW
+
+\pagebreak
+{\huge \textbf{What we Owe to Each Other}}
+
+
+"In a typical village, the only people likely to pay cash were passing
+travelers, and those considered riff-raff: paupers and ne'er-do-wells so
+notoriously down on their luck that no one would extend credit to
+them. Since everyone was involved in selling something, however just
+about everyone was both creditor and debtor; most family income took
+the form of promises from other families; everyone knew and kept
+count of what their neighbors owed one another; and every six months
+or year or so, communities would hold a general public " reckoning,"
+cancelling debts out against each other in a great circle, with only those
+differences then remaining when all was done being settled by use of
+coin or goods." (Debt: The First 5000 Years Page 327)
+
+
+
+\large \textbf{Maker Checks}
+
+A modern version of the village exchange loops would be the idea of Maker Checks. 
+
+
+
+
+\pagebreak
+{\huge \textbf{What is Property?}}
+{\fontsize{9pt}{9pt}\selectfont
+\large Legal Definitions:
+
+This category is referred to as "Private Property" and is a collection of a few distinct rights. These are the rights enforced by and recognized by law. 
 
 \begin{enumerate}
 	
-\item ASSESSMENTTYPE1
+	\item \textbf{Usufruct} - the right use use and receive the value from a piece of the physical world
+
+	\item \textbf{Destruction} - the right to destroy a piece of the physical world
+
+	\item \textbf{Exclusion} -  the right to exclude others
  
-\item ASSESSMENTTYPE2
- 
-\item ASSESSMENTTYPE3
- 
-\item ASSESSMENTTYPE4
- 
- \item ASSESSMENTTYPE5
- 
- \item ASSESSMENTTYPE6
- 
- \item ASSESSMENTTYPE7
- 
+	\item \textbf{Increase (rent)} - the right to receive rents
 \end{enumerate}
-
-LEARNINGOUTCOME1
-
-LEARNINGOUTCOME2
-
-LEARNINGOUTCOME3
-
-LEARNINGOUTCOME4
-
-LEARNINGOUTCOME5
-
-LEARNINGOUTCOME6
-
-LEARNINGOUTCOME7
-
-\pagebreak
- 
-{\huge \textbf{Key Definitions}}
-\begin{enumerate}
-	\item \textbf{KEYTERM1:} DEFINITION1
-	\item \textbf{KEYTERM2:} DEFINITION2
-	\item \textbf{KEYTERM3:} DEFINITION3
-	\item \textbf{KEYTERM4:} DEFINITION4
-	\item \textbf{KEYTERM5:} DEFINITION5
-\end{enumerate}
-
-\pagebreak
-
-{\huge \textbf{Course Readings}}
-
-\begin{enumerate}
 	
-\item \textbf{READING1TITLE:} READING1DESCRIPTION
 
-\item \textbf{READING2TITLE:} READING2DESCRIPTION
+\large \textbf{Categories in a Commons}
 
-\item \textbf{READING3TITLE:} READING3DESCRIPTION
+Within a Commons, once the external entity has been assigned Private Property rights within the law, then that "bubble" can ascribe the rights according to its own rules. The commons can allocate areas of the pieces of the physical world that it manages (the clearly defined boundaries). The allocations can be for consumed aspects (the increase), it can be to assign use terms (Usufruct), and it can determine to what degree exclusion and destruction are used within the commons.
 
-\item \textbf{READING4TITLE:} READING4DESCRIPTION
+\large \textbf{Personal Property}: The items or space that is exclusively assigned along the legal definition. These can be either private property that came with someone into the commons, or can be the appropriators allocated share of some bounty. 
 
-\item \textbf{READING5TITLE:} READING5DESCRIPTION
-
-\item \textbf{READING6TITLE:} READING6DESCRIPTION
-
-\item \textbf{READING7TITLE:} READING7DESCRIPTION
-
-\end{enumerate}
+ \large \textbf{Commons Space}: This is the piece of the physical world that may have Usufruct allocated to members, or the public. These generally have the right of destruction held withing the commons (for repairs and upgrades). The right to exclude is also held by the commons itself to determine if and when people can or will be excluded. 
+ 
+  \large \textbf{Public Space}: This is space held by the state that assigned property rights. Examples would be the roads, infrastructure and public lands such as parks. 
+}
 
 \pagebreak
 
-{\huge \textbf{Scope \& Sequence}}
+\huge \textbf{HOWTO Build Common Workshop}
 
-SEQUENCEOVERVIEW
-
-TIMELINEOVERVIEW
-
-PREREQUISITEINFO
-
-MODULE1BREAKDOWN
-
-MODULE2BREAKDOWN
-
-MODULE3BREAKDOWN
-
-MODULE4BREAKDOWN
-
-MODULE5BREAKDOWN
-
-CULMINATINGACTIVITY
-
-REFLECTIONCOMPONENT
+\linedpage
 
 \pagebreak
 
-{\huge \textbf{Resources \& Materials}}
+Workshop 2
 
-\textbf{Required Texts:} REQUIREDTEXTS
+\linedpage
 
-\textbf{Supplementary Materials:} SUPPLEMENTARYMATERIALS
+\pagebreak
 
-\textbf{Technology Requirements:} TECHREQUIREMENTS
+Workshop 3
 
-\textbf{Community Resources:} COMMUNITYRESOURCES
+\linedpage
 
 \vspace{1cm}
 
 \pagebreak
 
-{\huge \textbf{Practical Exercises}}
+Workshop 4
 
-\textbf{PRACTICAL1TITLE:} PRACTICAL1DESCRIPTION
- 	
-\textbf{PRACTICAL2TITLE:} PRACTICAL2DESCRIPTION
- 	
-\textbf{PRACTICAL3TITLE:} PRACTICAL3DESCRIPTION
- 	
-\textbf{PRACTICAL4TITLE:} PRACTICAL4DESCRIPTION
- 	
-\textbf{PRACTICAL5TITLE:} PRACTICAL5DESCRIPTION
- 	
-\textbf{PRACTICAL6TITLE:} PRACTICAL6DESCRIPTION
- 	
-\textbf{PRACTICAL7TITLE:} PRACTICAL7DESCRIPTION
-
-
+\linedpage
 
 \vspace{1cm}
 
 \pagebreak
 
-{\huge \textbf{Appendix}}
+\huge \textbf{A Call To Action}
 
-\vspace{1cm}
+{\fontsize{11pt}{11pt}\selectfont
+I don't want to run a business. I don't want to manage or profit from
+anyone. I should like to help everyone - if possible - Man, Woman -
+young - old. We all want to help one another. Human beings are like
+that. We want to live by each other's happiness - not by each other's
+misery. We don't want to hate and despise one another. In this world
+there is room for everyone. And the good earth is rich and can provide
+for everyone. The way of life can be free and beautiful... but we have
+lost the way.
+
+Greed has poisoned our souls, has barricaded the world with hate, has
+drone-striked us into misery and bloodshed. We have developed speed, but
+we have shut ourselves in. The robotics that gives abundance has left us in
+want. Our knowledge has made us cynical. Our cleverness, hard and
+unkind. We think too much and feel too little. More than markets we need
+humanity. More than profitability we need kindness and gentleness.
+Without these qualities, life will be violent and all will be lost....
+
+The internet and the smartphone have brought us closer together. The
+very nature of these inventions cries out for the goodness in humanity -
+cries out for universal kinship - for the unity of us all. Even now my
+words could reach billions throughout the world - billions of
+despairing men, women, and little children - victims of a system that
+makes us torture and imprison each other in either the slavery of wage labor or the destitution of homelesness.
+
+To those who can hear me, I say - do not despair. The misery that is now
+upon us is but the passing of greed - the bitterness of those who fear
+the way of human progress. The rise of automation has taken so much away
+from so many, and the rewards, so far, given only to the few. As long as
+\textbf{we} have the ability to invent, \textbf{what which was taken} can
+\textbf{not} be kept for long....
+
+To the Makers among us, don't give your \textbf{time,} your
+\textbf{creativity,} your \emph{\textbf{life}} to a Corporation! An
+organization designed for the sole purpose of greed; Designed to take as
+much as possible for itself, to maximize shareholder value! Don't live
+for greed, \textbf{Design for Freedom!} We the Makers have the power to
+build Our Own automated production. \textbf{The power to create abundance!} We the Makers have the power to make this life Free and
+Beautiful, to make this life a wonderful adventure! In the name of
+Community and Free Information let us use this power, let us all unite
+towards a common project. Let us design a free and open source
+production system to provide \textbf{abundance for \emph{all}}\emph{.}
+By the promise of abundance corporations have risen to power. But they
+lie! They do not fulfill that promise. \textbf{They never will!} Free
+markets free Corporations, but they enslave the people! Now let us
+design a better world, a world of local sustainable automated abundance
+- to do away with greed, with hate and domination. Let us design for a
+world of reason, a world where science and progress will lead to all
+humanity's freedom. \textbf{Makers!} in the name of Freedom and
+Community, \textbf{let us all unite!}
+
+(Credit: Charlie Chaplin, Reworked by Kevin Harrington)
+
+}
+
 \end{document}
