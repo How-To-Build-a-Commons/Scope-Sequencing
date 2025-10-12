@@ -18,7 +18,14 @@
 \fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
 \fancyfoot[RE,LO]{How To Build A Commons vVERSIONNUMBER} % other info in "inner" position of footer line
 \usepackage{hyperref}
+\usepackage{tikz}
 
+\newcommand{\linedpage}{%
+	\noindent
+	\foreach \n in {1,...,12}{%
+		\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	}
+}
 
 \usepackage{multicol}
 
@@ -238,16 +245,21 @@ This is the workshop -- TODO
 
 Workshop 2
 
+\linedpage
 
 \pagebreak
 
 Workshop 3
+
+\linedpage
 
 \vspace{1cm}
 
 \pagebreak
 
 Workshop 4
+
+\linedpage
 
 \vspace{1cm}
 
