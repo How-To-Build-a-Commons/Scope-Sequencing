@@ -1,19 +1,22 @@
 \documentclass{article}
 \usepackage{enumitem,amssymb}
 \usepackage{lipsum} % for filler text
-\usepackage{fancyhdr}
-\pagestyle{fancy}
 \usepackage{geometry}
 \geometry{
-	top=1in,
-	bottom=1in,
-	left=1in,
-	right=1in
+	paperwidth=5.5in,
+	paperheight=8.5in,
+	top=0.25in,
+	bottom=0.5in,
+	left=0.25in,
+	right=0.25in,
+	footskip=20pt  % Reserve space for footer
 }
 \usepackage{qrcode}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
 \usepackage{easylist}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
 \fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
@@ -22,7 +25,7 @@
 
 \newcommand{\linedpage}{%
 	\noindent
-	\foreach \n in {1,...,12}{%
+	\foreach \n in {1,...,10}{%
 		\rule{\textwidth}{0.4pt}\\[\baselineskip]
 	}
 }
@@ -192,7 +195,7 @@ A modern version of the village exchange loops would be the idea of Maker Checks
 
 \pagebreak
 {\huge \textbf{What is Property?}}
-
+{\fontsize{9pt}{9pt}\selectfont
 \large Legal Definitions:
 
 This category is refered to as "Private Property" and is a collection of a few distinct rights. These are the rights enforced by and recognized by law. 
@@ -208,21 +211,6 @@ This category is refered to as "Private Property" and is a collection of a few d
 	\item \textbf{Increase (rent)} - the right to receive rents
 \end{enumerate}
 	
-\large Philosophical definition: Violence vouchers
-
-\large \textbf{Holdings}:
-
-Saying someone owns a piece of the world obscures what is actually going on. Ownership is not a relationship between a person and a piece of the world. It is a relationship between a person and all other persons. It is a relationship that consists of the following threat: should someone else act upon this piece of the world, violence will be brought against them in order to cause them to desist.
-
-When a state (or state-like entity) establishes a system of private property, all it really does is hand out violence vouchers to people who we call owners. 
-
-\large \textbf{Trading}:
-
-People do not trade pieces of the world. They trade violence vouchers. 
-
-\large \textbf{Rents}:
-
-People do not rent property from other people. They trade their violence voucher over some piece of the world in exchange for the person they are renting from agreeing to waive their right to redeem their violence voucher over some other piece of the world for some period of time. A rent is when you leverage threats to redeem your violence vouchers in order to acquire violence vouchers from others without giving any violence vouchers in return.
 
 \large \textbf{Categories in a Commons}
 
@@ -233,7 +221,7 @@ Within a Commons, once the external entity has been assigned Private Property ri
  \large \textbf{Commons Space}: This is pieces of the physical world that may have Usefruct allocated to members, or the public. These generally have the right of destruction held withing the commons (for repairs and upgrades). The right to exclude is also held by the commons itself to determine if and when people can or will be excluded. 
  
   \large \textbf{Public Space}: This is space held by the state that assigned property rights. Examples would be the roads, infrastructure and public lands such as parks. 
-
+}
 
 \pagebreak
 
@@ -265,7 +253,7 @@ Workshop 4
 
 \pagebreak
 
-{\fontsize{15pt}{15pt}\selectfont
+{\fontsize{11pt}{11pt}\selectfont
 I don't want to run a business. I don't want to manage or profit from
 anyone. I should like to help everyone - if possible - Man, Woman -
 young - old. We all want to help one another. Human beings are like
@@ -286,15 +274,15 @@ Without these qualities, life will be violent and all will be lost....
 The internet and the smartphone have brought us closer together. The
 very nature of these inventions cries out for the goodness in humanity -
 cries out for universal kinship - for the unity of us all. Even now my
-words are reaching billions throughout the world - billions of
+words could reach billions throughout the world - billions of
 despairing men, women, and little children - victims of a system that
-makes us torture and imprison each other in the slavery of wage labor.
+makes us torture and imprison each other in either the slavery of wage labor or the destitution of homelesness.
 
 To those who can hear me, I say - do not despair. The misery that is now
 upon us is but the passing of greed - the bitterness of those who fear
 the way of human progress. The rise of automation has taken so much away
 from so many, and the rewards, so far, given only to the few. As long as
-\textbf{we} have the ability to invent, \textbf{what was taken} can
+\textbf{we} have the ability to invent, \textbf{what which was taken} can
 \textbf{not} be kept for long....
 
 To the Makers among us, don't give your \textbf{time,} your
@@ -316,7 +304,7 @@ world of reason, a world where science and progress will lead to all
 humanity's freedom. \textbf{Makers!} in the name of Freedom and
 Community, \textbf{let us all unite!}
 
-(Credit: Charlie Chaplin, Edited by Kevin Harrington)
+(Credit: Charlie Chaplin, Reworked by Kevin Harrington)
 
 }
 
