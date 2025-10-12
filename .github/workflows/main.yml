@@ -44,10 +44,10 @@ jobs:
         run: sed -i 's/VERSIONNUMBER/${{ github.ref_name }}/g' ScopeSequencing.tex
         
       - name: Generate PDF
-        run: pdflatex -jobname=ScopeSequencing-${{ github.ref_name }} ScopeSequencing.tex
+        run: pdflatex -jobname=HowToBuildACommons-${{ github.ref_name }} ScopeSequencing.tex
         
       - name: Generate Booklet PDF
-        run: bookletimposer -b -a -f "Letter" -p "2x1"  -o  ScopeSequencing-${{ github.ref_name }}-booklet.pdf ScopeSequencing-${{ github.ref_name }}.pdf      
+        run: bookletimposer -b -a -f "Letter" -p "2x1"  -o  HowToBuildACommons-${{ github.ref_name }}-booklet.pdf HowToBuildACommons-${{ github.ref_name }}.pdf      
         
       - name: Debug - Show generated files
         run: ls -al .
@@ -55,7 +55,7 @@ jobs:
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
-          files: ScopeSequencing-${{ github.ref_name }}.pdf,ScopeSequencing-${{ github.ref_name }}-booklet.pdf,Building-Belonging-FINAL-E-book-iwmkwg.epub
+          files: HowToBuildACommons-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}-booklet.pdf,Building-Belonging-FINAL-E-book-iwmkwg.epub
           draft: false
           prerelease: false
           name: ${{ github.ref_name }}
