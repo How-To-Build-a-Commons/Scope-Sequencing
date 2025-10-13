@@ -22,10 +22,18 @@
 \fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{rotating}
 
 \newcommand{\linedpage}{%
 	\noindent
 	\foreach \n in {1,...,10}{%
+		\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	}
+}
+
+\newcommand{\linedpagetwo}{%
+	\noindent
+	\foreach \n in {1,...,19}{%
 		\rule{\textwidth}{0.4pt}\\[\baselineskip]
 	}
 }
@@ -168,30 +176,6 @@ From the Yana Ludwig reading:
 \end{enumerate}
 
 
-\pagebreak
-{\huge \textbf{What we Owe to Each Other}}
-
-
-"In a typical village, the only people likely to pay cash were passing
-travelers, and those considered riff-raff: paupers and ne'er-do-wells so
-notoriously down on their luck that no one would extend credit to
-them. Since everyone was involved in selling something, however just
-about everyone was both creditor and debtor; most family income took
-the form of promises from other families; everyone knew and kept
-count of what their neighbors owed one another; and every six months
-or year or so, communities would hold a general public " reckoning,"
-cancelling debts out against each other in a great circle, with only those
-differences then remaining when all was done being settled by use of
-coin or goods." (Debt: The First 5000 Years Page 327)
-
-
-
-\large \textbf{Maker Checks}
-
-A modern version of the village exchange loops would be the idea of Maker Checks. 
-
-
-
 
 \pagebreak
 {\huge \textbf{What is Property?}}
@@ -223,6 +207,58 @@ Within a Commons, once the external entity has been assigned Private Property ri
   \large \textbf{Public Space}: This is space held by the state that assigned property rights. Examples would be the roads, infrastructure and public lands such as parks. 
 }
 
+
+\pagebreak
+{\huge \textbf{What we Owe to Each Other}}
+
+\begin{minipage}[t]{0.66\textwidth}
+	\vspace{0pt}
+	"In a typical village, the only people likely to pay cash were passing
+	travelers, and those considered riff-raff: paupers and ne'er-do-wells so
+	notoriously down on their luck that no one would extend credit to
+	them. Since everyone was involved in selling something, however just
+	about everyone was both creditor and debtor; most family income took
+	the form of promises from other families; everyone knew and kept
+	count of what their neighbors owed one another; and every six months
+	or year or so, communities would hold a general public " reckoning,"
+	cancelling debts out against each other in a great circle, with only those
+	differences then remaining when all was done being settled by use of
+	coin or goods." (Debt: The First 5000 Years Page 327)
+	\large \textbf{Maker Checks}
+	
+	A modern version of the village exchange loops would be the idea of Maker Checks. 
+
+\end{minipage}%
+\begin{minipage}[t]{0.33\textwidth}
+	\vspace{0pt}
+	\centering
+	\begin{turn}{90}
+
+\fbox{\begin{minipage}[t]{5in}
+		I \rule{1.5in}{0.4pt} promise to work for \rule{0.5in}{0.4pt} hours and \rule{0.5in}{0.4pt} minutes. 
+		
+\noindent
+\begin{minipage}[t]{0.6\textwidth}
+	Signed On: \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+	
+	
+	Expires On: \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.35\textwidth}
+	\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
+	
+\end{minipage}
+
+\end{minipage}}
+	\end{turn}
+\end{minipage}
+
+
+\pagebreak
+
+\linedpagetwo
+
 \pagebreak
 
 \huge \textbf{HOWTO Build Common Workshop}
@@ -235,17 +271,11 @@ Workshop 2
 
 \linedpage
 
-\pagebreak
-
-Workshop 3
-
-\linedpage
-
 \vspace{1cm}
 
 \pagebreak
 
-Workshop 4
+Workshop 3
 
 \linedpage
 
