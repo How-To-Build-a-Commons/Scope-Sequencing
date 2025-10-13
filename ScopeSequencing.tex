@@ -20,8 +20,8 @@
 \usepackage{fancyhdr}
 
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-\fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
+
+\fancyfoot[C]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
 \usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{rotating}
@@ -29,7 +29,12 @@
 \usepackage{graphicx}
 \usepackage{eso-pic} % allows background placement
 \pagestyle{fancy}
+\usepackage{sectsty}
+\sectionfont{\centering}
 
+% Set the value
+\newlength{\mylen}
+\setlength{\mylen}{0.25in}
 % --- Add corner image depending on odd/even page ---
 \newcommand{\AddCornerImage}{%
 	\AddToShipoutPictureBG{%
@@ -37,12 +42,12 @@
 		\AtPageLowerLeft{%
 			\ifodd\value{page}
 			% Odd pages: bottom-right corner (normal), moved up and in 1mm
-			\put(\LenToUnit{\paperwidth-1.5cm-1mm},1mm){%
+			\put(\LenToUnit{\paperwidth-1.5cm-\mylen},\LenToUnit{\mylen}){%
 				\includegraphics[width=1.5cm]{CornerDetail.png}%
 			}%
 			\else
 			% Even pages: bottom-left corner (mirrored), moved up and in 1mm
-			\put(1mm,1mm){%
+			\put(\LenToUnit{\mylen},\LenToUnit{\mylen}){%
 				\reflectbox{\includegraphics[width=1.5cm]{CornerDetail.png}}%
 			}%
 			\fi
@@ -51,19 +56,18 @@
 		\AtPageUpperLeft{%
 			\ifodd\value{page}
 			% Odd pages: top-right corner (mirrored and flipped), moved down and in 1mm
-			\put(\LenToUnit{\paperwidth-1.5cm-1mm},-\LenToUnit{1mm}){%
+			\put(\LenToUnit{\paperwidth-1.5cm-\mylen},-\LenToUnit{\mylen}){%
 				\scalebox{1}[-1]{\includegraphics[width=1.5cm]{CornerDetail.png}}%
 			}%
 			\else
 			% Even pages: top-left corner (flipped), moved down and in 1mm
-			\put(1mm,-\LenToUnit{1mm}){%
+			\put(\LenToUnit{\mylen},-\LenToUnit{\mylen}){%
 				\reflectbox{\scalebox{1}[-1]{\includegraphics[width=1.5cm]{CornerDetail.png}}}%
 			}%
 			\fi
 		}%
 	}%
 }
-
 
 \newcommand{\linedpage}{%
 	\noindent
@@ -85,11 +89,13 @@
 \usepackage{atbegshi}
 \AtBeginShipout{\AddCornerImage}
 \begin{document}
-	
+
 	\fontsize{8}{9}\selectfont
 	
 {\centering \huge \textbf{Building A Common}\par}
 
+\thispagestyle{empty} % put this right after \begin{document} or after your title page
+	
 \pagebreak
 
 \vspace{1cm}
