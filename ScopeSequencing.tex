@@ -18,7 +18,7 @@
 \setlist[todolist]{label=$\square$}
 \usepackage{easylist}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+
 \fancyfoot{} % clear all footer fields
 \fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
 \fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
@@ -26,8 +26,28 @@
 \usepackage{tikz}
 \usepackage{rotating}
 \usepackage{dashbox}
+\usepackage{graphicx}
+\usepackage{eso-pic} % allows background placement
+\pagestyle{fancy}
 
-
+% --- Add corner image depending on odd/even page ---
+\newcommand{\AddCornerImage}{%
+	\AddToShipoutPictureBG{%
+		\AtPageLowerLeft{%
+			\ifodd\value{page}
+			% Odd pages: bottom-right corner, moved up and in 1mm
+			\put(\LenToUnit{\paperwidth-1.5cm-1mm},1mm){%
+				\includegraphics[width=1.5cm]{CornerDetail.png}%
+			}%
+			\else
+			% Even pages: bottom-left corner (mirrored), moved up and in 1mm
+			\put(1mm,1mm){%
+				\reflectbox{\includegraphics[width=1.5cm]{CornerDetail.png}}%
+			}%
+			\fi
+		}%
+	}%
+}
 
 \newcommand{\linedpage}{%
 	\noindent
@@ -46,7 +66,8 @@
 \usepackage{multicol}
 
 
-
+\usepackage{atbegshi}
+\AtBeginShipout{\AddCornerImage}
 \begin{document}
 	
 	\fontsize{8}{9}\selectfont
@@ -274,7 +295,8 @@ Within a Commons, once the external entity has been assigned Private Property ri
 \vspace{0pt}
 \centering
 \begin{turn}{90}
-	\dbox{\begin{minipage}[t]{5.2in}  % Reduced from 5in
+	\dbox{%
+		\begin{minipage}[t]{5.2in}  % Reduced from 5in
 			\vspace{0.3cm}
 			I \rule{1.5in}{0.4pt} promise to work for \rule{0.5in}{0.4pt} hours and \rule{0.5in}{0.4pt} minutes. 
 			
@@ -282,17 +304,24 @@ Within a Commons, once the external entity has been assigned Private Property ri
 			\begin{minipage}[t]{0.6\textwidth}
 				\makebox[0.8in][l]{Signed On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
 				
-				
 				\makebox[0.8in][l]{Expires On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
 			\end{minipage}%
 			\vspace{0.2cm}
 			\begin{minipage}[t]{0.35\textwidth}
-				
 				\shortstack{\small Notes\\[0.6cm]\rule{1.5in}{0.4pt}}
 				\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
 			\end{minipage}
-	\end{minipage}}
+			
+			% --- Add this block at the end of the minipage ---
+			\vspace{0pt}
+			\hfill
+			\raisebox{0pt}[0pt][0pt]{%
+				\includegraphics[width=1.2cm]{CornerDetail.png}%
+			}%
+		\end{minipage}%
+	}
 \end{turn}
+
 \vspace{0.1cm}
 {\footnotesize Cut along the dotted line}
 \end{minipage}
@@ -340,13 +369,6 @@ Workshop 3
 
 \pagebreak
 
-Workshop 4
-
-\linedpage
-
-\vspace{1cm}
-
-\pagebreak
 
 \section{A Call To Action}
 
