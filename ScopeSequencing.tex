@@ -8,7 +8,7 @@
 	top=0.25in,
 	bottom=0.5in,
 	left=0.25in,
-	right=0.25in,
+	right=0.2in,
 	footskip=20pt  % Reserve space for footer
 }
 \usepackage{qrcode}
@@ -23,6 +23,7 @@
 \usepackage{hyperref}
 \usepackage{tikz}
 \usepackage{rotating}
+\usepackage{dashbox}
 
 \newcommand{\linedpage}{%
 	\noindent
@@ -41,8 +42,8 @@
 \usepackage{multicol}
 
 \begin{document}
-	
-{\huge \textbf{Building A Common}}
+{\centering \huge \textbf{Building A Common}\par}
+
 \pagebreak
 
 \vspace{1cm}
@@ -209,9 +210,9 @@ Within a Commons, once the external entity has been assigned Private Property ri
 
 
 \pagebreak
-{\huge \textbf{What we Owe to Each Other}}
+{\huge \textbf{What We Owe to Each Other}}
 
-\begin{minipage}[t]{0.66\textwidth}
+\begin{minipage}[t]{0.72\textwidth}
 	\vspace{0pt}
 	"In a typical village, the only people likely to pay cash were passing
 	travelers, and those considered riff-raff: paupers and ne'er-do-wells so
@@ -224,36 +225,49 @@ Within a Commons, once the external entity has been assigned Private Property ri
 	cancelling debts out against each other in a great circle, with only those
 	differences then remaining when all was done being settled by use of
 	coin or goods." (Debt: The First 5000 Years Page 327)
-	\large \textbf{Maker Checks}
 	
-	A modern version of the village exchange loops would be the idea of Maker Checks. 
+	\vspace{0.2cm}
+	
+	While it is a nice idea that we all would simply start trusting each other and immediately support each other, it is unrealistic to imagine it would spontaneously occur. Here is a mechanism for boot-strapping such a system in a world where people are familiar with money exchange. 
+	
+{\centering \textbf{Maker Checks}\par}
+	
+	A modern version of the village exchange loops would be the idea of Maker Checks. A way of ensuring the value of a check is the known products of the maker. The specialty of the maker can be specified in the notes, acting as a value-backing for the check. The back side has lines for signing over to whom the check is personally owed. When the check is passed, the name is signed on the back. A check can continue to circulate as a medium of exchange until it expires or it is redeemed by the signatory. The exchange rate of the individuals involved is determined when they compare their personal labor time against the time equivalence on the face value on the check.
+	
+	Anyone has the ability to create credit, so long as they have the trust of their community. Exchange can be facilitated by communities trusting one another. By passing the promise around, a whole community of exchange can be facilitated. The  basis for all exchange is to realize that we are always in each others debt, and that personalized debt is what creates society itself. 
+	
+	
 
+%This generates the check
 \end{minipage}%
-\begin{minipage}[t]{0.33\textwidth}
-	\vspace{0pt}
-	\centering
-	\begin{turn}{90}
-
-\fbox{\begin{minipage}[t]{5in}
-		I \rule{1.5in}{0.4pt} promise to work for \rule{0.5in}{0.4pt} hours and \rule{0.5in}{0.4pt} minutes. 
-		
-\noindent
-\begin{minipage}[t]{0.6\textwidth}
-	Signed On: \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
-	
-	
-	Expires On: \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.35\textwidth}
-	\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
-	
+\vspace{0.2cm}
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+\centering
+\begin{turn}{90}
+	\dbox{\begin{minipage}[t]{5.2in}  % Reduced from 5in
+			\vspace{0.3cm}
+			I \rule{1.5in}{0.4pt} promise to work for \rule{0.5in}{0.4pt} hours and \rule{0.5in}{0.4pt} minutes. 
+			
+			\noindent
+			\begin{minipage}[t]{0.6\textwidth}
+				\makebox[0.8in][l]{Signed On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+				
+				
+				\makebox[0.8in][l]{Expires On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+			\end{minipage}%
+			\vspace{0.2cm}
+			\begin{minipage}[t]{0.35\textwidth}
+				
+				\shortstack{\small Notes\\[0.6cm]\rule{1.5in}{0.4pt}}
+				\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
+			\end{minipage}
+	\end{minipage}}
+\end{turn}
+\vspace{0.1cm}
+{\footnotesize Cut along the dotted line}
 \end{minipage}
-
-\end{minipage}}
-	\end{turn}
-\end{minipage}
-
+%End of the check
 
 \pagebreak
 
