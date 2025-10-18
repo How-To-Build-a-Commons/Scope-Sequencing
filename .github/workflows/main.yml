@@ -55,7 +55,7 @@ jobs:
       - name: Create or Update Release
         uses: softprops/action-gh-release@v1
         with:
-          files: HowToBuildACommons-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}-booklet.pdf
+          files: HowToBuildACommons-${{ github.ref_name }}.pdf,HowToBuildACommons-${{ github.ref_name }}-booklet.pdf,how-to-consensus-zine.svg
           draft: false
           prerelease: false
           name: ${{ github.ref_name }}
