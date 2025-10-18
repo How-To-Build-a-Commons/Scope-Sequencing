@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage{enumitem,amssymb}
 \usepackage{lipsum} % for filler text
 \usepackage{geometry}
@@ -8,7 +10,7 @@
 	top=0.25in,
 	bottom=0.5in,
 	left=0.25in,
-	right=0.25in,
+	right=0.2in,
 	footskip=20pt  % Reserve space for footer
 }
 \usepackage{qrcode}
@@ -16,12 +18,56 @@
 \setlist[todolist]{label=$\square$}
 \usepackage{easylist}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+
 \fancyfoot{} % clear all footer fields
-\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-\fancyfoot[RE,LO]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
+
+\fancyfoot[C]{How To Build A Common vVERSIONNUMBER} % other info in "inner" position of footer line
 \usepackage{hyperref}
 \usepackage{tikz}
+\usepackage{rotating}
+\usepackage{dashbox}
+\usepackage{graphicx}
+\usepackage{eso-pic} % allows background placement
+\pagestyle{fancy}
+\usepackage{sectsty}
+\sectionfont{\centering}
+
+% Set the value
+\newlength{\mylen}
+\setlength{\mylen}{0.25in}
+% --- Add corner image depending on odd/even page ---
+\newcommand{\AddCornerImage}{%
+	\AddToShipoutPictureBG{%
+		% === Bottom Corner ===
+		\AtPageLowerLeft{%
+			\ifodd\value{page}
+			% Odd pages: bottom-right corner (normal), moved up and in 1mm
+			\put(\LenToUnit{\paperwidth-1.5cm-\mylen},\LenToUnit{\mylen}){%
+				\includegraphics[width=1.5cm]{CornerDetail.png}%
+			}%
+			\else
+			% Even pages: bottom-left corner (mirrored), moved up and in 1mm
+			\put(\LenToUnit{\mylen},\LenToUnit{\mylen}){%
+				\reflectbox{\includegraphics[width=1.5cm]{CornerDetail.png}}%
+			}%
+			\fi
+		}%
+		% === Top Corner ===
+		\AtPageUpperLeft{%
+			\ifodd\value{page}
+			% Odd pages: top-right corner (mirrored and flipped), moved down and in 1mm
+			\put(\LenToUnit{\paperwidth-1.5cm-\mylen},-\LenToUnit{\mylen}){%
+				\scalebox{1}[-1]{\includegraphics[width=1.5cm]{CornerDetail.png}}%
+			}%
+			\else
+			% Even pages: top-left corner (flipped), moved down and in 1mm
+			\put(\LenToUnit{\mylen},-\LenToUnit{\mylen}){%
+				\reflectbox{\scalebox{1}[-1]{\includegraphics[width=1.5cm]{CornerDetail.png}}}%
+			}%
+			\fi
+		}%
+	}%
+}
 
 \newcommand{\linedpage}{%
 	\noindent
@@ -30,16 +76,33 @@
 	}
 }
 
+\newcommand{\linedpagetwo}{%
+	\noindent
+	\foreach \n in {1,...,30}{%
+		\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	}
+}
+
 \usepackage{multicol}
 
+
+\usepackage{atbegshi}
+\AtBeginShipout{\AddCornerImage}
 \begin{document}
+
+\fontsize{8}{9}\selectfont
 	
-{\huge \textbf{Building A Common}}
+\vspace*{\fill}	
+{\centering \huge \textbf{Building A Common}\par}
+\vspace*{\fill}
+
+\thispagestyle{empty} % put this right after \begin{document} or after your title page
+	
 \pagebreak
 
 \vspace{1cm}
 
-{\huge \textbf{Referenced Readings}}
+{\centering \huge \textbf{Referenced Readings} \par}
 
 \begin{multicols}{2}
 \begin{enumerate}
@@ -75,65 +138,87 @@
 \end{multicols}
 
 \pagebreak
+
 \section{What is a Common}
 
-\textbf{Governing the Commons by Ellinor Ostrum Table 3.1}
+\vspace{0.2cm}
+
+As we live in a world that is entirely governed by markets, I find myself wondering, can we make some of the world different? It turns out that there is a type of managing resources that is different than the State ownership, and different than private ownership, it's commons ownership. 
+
+A commons is some piece of the physical world that is managed by a community for the benefit of that community. A commons can be a shared resource that community members share time using in turn. A commons can also manage a consumed resource that is allocated to community members according to the agreements of the community. A community member that receives something from a commons is an "appropriator".
+
+A commons can be managed in a very large variety of ways. Members create the rules that are used to govern their own commons. Some commons are more and less stable over time, depending on what rules the community chooses to adopt. 
 
 
-Design principles illustrated by long-enduring CPR institutions
+Lets review some design principals used by commons across the world for stable commons. These principals were derived by Ostrum from a datasets of commons that have been operating for at least 200 years. 
 
-\subsection{Clearly defined boundaries}
+\begin{enumerate}
 
-Individuals or households who have rights to withdraw resource units from the CPR must be clearly defined, as must the boundaries of the CPR itself.
+\item {Clearly defined boundaries}
 
-\subsection{ Congruence between appropriation and provision rules and local conditions}
+Individuals or households who have rights to withdraw resource units from the commons must be clearly defined, as must the boundaries of the commons itself.
+
+
+\item{ Congruence between appropriation and provision rules and local conditions}
 
  Appropriation rules restricting time, place, technology, and/or quantity of resource units are related to local conditions and to provision rules requiring labor, material, and/or money.
 
-\subsection{Collective-choice arrangements}
 
-Most individuals affected by the operational rules can participate in modifying the operational rules.
+\item{Collective-choice arrangements}
 
-\subsection{Monitoring}
+community members can participate in modifying the operational rules.
 
-Monitors, who actively audit CPR conditions and appropriator behavior, are accountable to the appropriators or are the appropriators.
 
-\subsection{Graduated sanctions}
+\item{Monitoring}
 
-Appropriators who violate operational rules are likely to be assessed graduated sanctions (depending on the seriousness and context of the offense) by other appropriators, by officials accountable to these appropriators, or by both.
+Monitors, who actively audit commons conditions and appropriator behavior, are accountable to the appropriators or are the appropriators.
 
-\subsection{Conflict-resolution mechanisms}
+
+\item{Graduated sanctions}
+
+Appropriators who violate operational rules are likely to be assessed graduated sanctions (depending on the seriousness and context of the offense) by other appropriators, by officials accountable to these appropriators, or by both. See the reading for many varied examples. 
+
+
+\item{Conflict-resolution mechanisms}
 
 Appropriators and their officials have rapid access to low-cost local arenas to resolve conflicts among appropriators or between appropriators and officials.
 
-\subsection{Minimal recognition of rights to organize}
 
-The rights of appropriators to devise their own institutions are not challenged by external governmental authorities.
 
-For CPRs that are parts of larger systems:
+\item{Minimal recognition of rights to organize}
 
-\subsection{Nested enterprises}
+The rights of appropriators to devise their own institutions are not challenged by external governmental authorities. Essentially property rights need to exist and be assigned to the commons itself. 
+
+For commons that are parts of larger systems:
+
+\item{Nested enterprises}
 
 Appropriation, provision, monitoring, enforcement, conflict resolution, and governance activities are organized in multiple layers of nested enterprises.
 
+\end{enumerate}
+\vspace{0.2cm}
+Always remember that building a common is a step-by-step process. You will start with whatever resources and rules you have, and add to the framework over time. The whole idea is to have the rules reflect the needs of the members of the commons. We are all screw-ups some times, and that is ok! We can always evolve our systems over time and bring them in line with our shared values. 
 
 
 
 
 \pagebreak
+
 \section{What is Consensus Process?}
 
-Consensus is a process where everyone should be able to weigh in equally on a decision, and no one should be bound by a decision they detest."
-this boils doing in practice to: Everyone who feels they have something relevant to say about a proposal ought to have their perspectives carefully considered.
+Consensus is a process where everyone should be able to weigh in equally on a decision, and no one should be bound by a decision they detest. This boils doing in practice to: Everyone who feels they have (something relevant to the commons) to say about a proposal ought to have their perspectives carefully considered. When making decision for the commons, every member should have the right to participate equally.
 
-Everyone who has strong concerns or objections should have those concerns or objections taken into account and, if possible, addressed in the final form of the proposal.
+Everyone who has strong concerns or objections should have those concerns or objections taken into account and, (if allowed by the commons structure), addressed in the final form of the proposal.
 
 Anyone who feels a proposal violates a fundamental principle shared by the group should have the opportunity to veto (“block”) that proposal.
 
-No one should be forced to go along with a decision to which they did not assent.
+No one should be forced to go along with a decision to which they did not assent. Likewise, meetings should not be held when there is not a problem to be solved. 
+
+A consensus meeting needs some structure to function. When running a meeting there are some roles that need to be filled. Someone needs to act as the facilitator. A facilitator keeps the notes on the meeting and keeps the current version of the proposal. Their role is to ensure that the proposals and objections are recorded accurately. A time keeper is needed to ensure that the agreed upon time limit for speaking is adhered to. Someone should also be keeping track of hands raised to keep the order of the discussion. If just one person is available, they could fulfill these roles themselves, but if the task is shared, then that is preferable. 
+
 \begin{enumerate}[]
-	\item someone makes a proposal for a certain course of action
-	\item  the facilitator asks for clarifying questions to make sure everyone understands precisely what is being proposed
+	\item (A member of the common) makes a proposal for a certain course of action
+	\item The facilitator asks for clarifying questions to make sure everyone understands precisely what is being proposed
 	\item the facilitator asks for concerns
 	\begin{enumerate}
 		\item during the discussion those with concerns may suggest friendly amendments to the proposal to address the concern, which the person originally bringing the proposal may or may not adopt
@@ -143,14 +228,24 @@ No one should be forced to go along with a decision to which they did not assent
 	\item the facilitator checks for consensus by:
 	\begin{enumerate}
 		\item asking if there are any stand-asides. By standing aside one is saying “I don’t like this idea, and wouldn’t take part in the action, but I’m not willing to stop others from doing so”. It is always important to allow all those who stand aside to have a chance to explain why they are doing so.
+
 		\item asking if there are any blocks. A block is not a “no” vote. It is much more like a veto. Perhaps the best way to think of it is that it allows anyone in the group to temporarily don the robes of a Supreme Court justice and strike down a piece of legislation they consider unconstitutional; or, in this casein violation of the fundamental principles of unity or purpose of being of the group\footnote{I should note that the usual language in Occupy Wall Street is that a block has to be based on a “moral, ethical, or safety concern that’s so strong you’d consider leaving the movement were the proposal to go forward”.}.,
+
 	\end{enumerate}
 \end{enumerate}
-
 \pagebreak
+
+
+
+\linedpagetwo
+
+\vspace{1cm}
+\pagebreak
+
 \section{Why Build a Common?}
 
 From the Yana Ludwig reading:
+
 
 \subsection{Spiritual or Religious}
 \subsection{Cultural Preservation}
@@ -161,35 +256,18 @@ From the Yana Ludwig reading:
 \subsection{Lifestyle and Comfort Enhancement}
 \subsection{Ecological Sustainability}
 
+\pagebreak
+
+
+
+\linedpagetwo
+
+\vspace{1cm}
 
 \pagebreak
-\section{What we Owe to Each Other}
 
-
-"In a typical village, the only people likely to pay cash were passing
-travelers, and those considered riff-raff: paupers and ne'er-do-wells so
-notoriously down on their luck that no one would extend credit to
-them. Since everyone was involved in selling something, however just
-about everyone was both creditor and debtor; most family income took
-the form of promises from other families; everyone knew and kept
-count of what their neighbors owed one another; and every six months
-or year or so, communities would hold a general public " reckoning,"
-cancelling debts out against each other in a great circle, with only those
-differences then remaining when all was done being settled by use of
-coin or goods." (Debt: The First 5000 Years Page 327)
-
-
-
-\large \textbf{Maker Checks}
-
-A modern version of the village exchange loops would be the idea of Maker Checks. 
-
-
-
-
-\pagebreak
 \section{What is Property?}
-\large Legal Definitions:
+\subsection{ Legal Definitions}
 
 This category is referred to as "Private Property" and is a collection of a few distinct rights. These are the rights enforced by and recognized by law. 
 
@@ -205,45 +283,118 @@ This category is referred to as "Private Property" and is a collection of a few 
 \end{enumerate}
 	
 
+
 \subsection{Categories in a Commons}
 
 Within a Commons, once the external entity has been assigned Private Property rights within the law, then that "bubble" can ascribe the rights according to its own rules. The commons can allocate areas of the pieces of the physical world that it manages (the clearly defined boundaries). The allocations can be for consumed aspects (the increase), it can be to assign use terms (Usufruct), and it can determine to what degree exclusion and destruction are used within the commons.
 
-\subsection{Personal Property}: The items or space that is exclusively assigned along the legal definition. These can be either private property that came with someone into the commons, or can be the appropriators allocated share of some bounty. 
 
-\subsection{Commons Space}: This is the piece of the physical world that may have Usufruct allocated to members, or the public. These generally have the right of destruction held withing the commons (for repairs and upgrades). The right to exclude is also held by the commons itself to determine if and when people can or will be excluded. 
+\subsection{Personal Property} The items or space that is exclusively assigned along the legal definition. These can be either private property that came with someone into the commons, or can be the appropriators allocated share of some bounty. 
+
+
+\subsection{Commons Space} This is the piece of the physical world that may have Usufruct allocated to members, or the public. These generally have the right of destruction held withing the commons (for repairs and upgrades). The right to exclude is also held by the commons itself to determine if and when people can or will be excluded. 
  
-\subsection{Public Space}: This is space held by the state that assigned property rights. Examples would be the roads, infrastructure and public lands such as parks. 
+\subsection{Public Space} This is space held by the state that assigned property rights. Examples would be the roads, infrastructure and public lands such as parks. 
+
+
+
+\pagebreak
+{\section{What We Owe to Each Other}}
+
+
+	
+\begin{minipage}[t]{0.72\textwidth}
+	\vspace{0pt}
+	"In a typical village, the only people likely to pay cash were passing
+	travelers, and those considered riff-raff: paupers and ne'er-do-wells so
+	notoriously down on their luck that no one would extend credit to
+	them. Since everyone was involved in selling something, however just
+	about everyone was both creditor and debtor; most family income took
+	the form of promises from other families; everyone knew and kept
+	count of what their neighbors owed one another; and every six months
+	or year or so, communities would hold a general public " reckoning,"
+	cancelling debts out against each other in a great circle, with only those
+	differences then remaining when all was done being settled by use of
+	coin or goods." (Debt: The First 5000 Years Page 327)
+	
+	\vspace{0.2cm}
+	
+	While it is a nice idea that we all would simply start trusting each other and immediately support each other, it is unrealistic to imagine it would spontaneously occur. Here is a mechanism for boot-strapping such a system in a world where people are familiar with money exchange. 
+	
+{\centering \textbf{Maker Checks}\par}
+	
+	A modern version of the village exchange loops would be the idea of Maker Checks. A way of ensuring the value of a check is the known products of the maker. The specialty of the maker can be specified in the notes, acting as a value-backing for the check. The back side has lines for signing over to whom the check is personally owed. When the check is passed, the name is signed on the back. A check can continue to circulate as a medium of exchange until it expires or it is redeemed by the signatory. The exchange rate of the individuals involved is determined when they compare their personal labor time against the time equivalence on the face value on the check.
+	
+	Anyone has the ability to create credit, so long as they have the trust of their community. Exchange can be facilitated by communities trusting one another. By passing the promise around, a whole community of exchange can be facilitated. The  basis for all exchange is to realize that we are always in each others debt, and that personalized debt is what creates society itself. 
+	
+
+
+%This generates the check
+\end{minipage}%
+\vspace{0.2cm}
+\begin{minipage}[t]{0.25\textwidth}
+\vspace{0pt}
+\centering
+\begin{turn}{90}
+	\dbox{%
+		\begin{minipage}[t]{5.2in}  % Reduced from 5in
+			\vspace{0.3cm}
+			I \rule{1.5in}{0.4pt} promise to work for \rule{0.5in}{0.4pt} hours and \rule{0.5in}{0.4pt} minutes. 
+			
+			\noindent
+			\begin{minipage}[t]{0.6\textwidth}
+				\makebox[0.8in][l]{Signed On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+				
+				\makebox[0.8in][l]{Expires On:} \shortstack{\small Year\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Month\\[0.4cm]\rule{0.5in}{0.4pt}} / \shortstack{\small Day\\[0.4cm]\rule{0.5in}{0.4pt}}
+			\end{minipage}%
+			\vspace{0.2cm}
+			\begin{minipage}[t]{0.35\textwidth}
+				\shortstack{\small Notes\\[0.6cm]\rule{1.5in}{0.4pt}}
+				\shortstack{\small Signature\\[0.6cm]\rule{1.5in}{0.4pt}}
+			\end{minipage}
+			
+			% --- Add this block at the end of the minipage ---
+			\vspace{0pt}
+			\hfill
+			\raisebox{0pt}[0pt][0pt]{%
+				\includegraphics[width=1.2cm]{CornerDetail.png}%
+			}%
+		\end{minipage}%
+	}
+\end{turn}
+
+\vspace{0.1cm}
+{\footnotesize Cut along the dotted line}
+\end{minipage}
+%End of the check
+
 
 \pagebreak
 
-\huge \textbf{HOW-TO Build Common Workshop}
+\linedpagetwo
 
-\linedpage
-
-\pagebreak
-
-Workshop 2
-
-\linedpage
 
 \pagebreak
 
-Workshop 3
+\section{HOW-TO Build Common}
 
-\linedpage
 
-\vspace{1cm}
+Lets imagine we would actually like to put these ideas into practice. 
+
+\begin{enumerate}
+
+ \item The first task is to gather together a group of your community to discuss what to organize. Using the stated principals in this pamphlet is an easy way to begin discussion. A group can change any and all frameworks laid out here, the important part is to agree on principals of decision making and intent as the starting point. Everything starts by talking to the people around you. 
+
+ \item Define a piece of the physical world with clearly defined boundaries. A clearly defined boundary will be some piece or pieces of the physical world that can be assigned as property by the legal system in which you reside. The group that is gathering can use the consensus process to determine what piece of the physical world they with to manage. If it is a purchase of a property to manage, discuss the monthly input committed by each member, and compare that to the available real estate and financing terms. A trust is a legal structure that can be used with a charter of assigned property and access rights to bridge cooperative decision making internally with the legal structure external to the cooperative. 
+ 
+ \item Establish problem solving strategies and conflict resolution forums. This can simply be that you agree to call a consensus meeting whenever there is a commons related decision that needs to be made. Ostrums book contains many different forms of problem solving systems if you need more examples. 
+ 
+\end{enumerate}
+
+
 
 \pagebreak
 
-Workshop 4
-
-\linedpage
-
-\vspace{1cm}
-
-\pagebreak
 
 \section{A Call To Action}
 
