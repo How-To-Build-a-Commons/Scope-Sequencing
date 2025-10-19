@@ -5,11 +5,19 @@
 	paperheight=4.25in
 }
 \usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\usepackage{adjustbox}
+
 \parskip1em
 \begin{document}
 	\sffamily\fontsize{60}{80}\selectfont
 	\centering
-	Page\par \#1\newpage
+	\begin{center}
+		\adjustbox{max width=\textwidth, max height=0.9\textheight}{%
+			\input{src/how-to-consensus-zine/flow-chart-only.tex}%
+		}
+	\end{center}
 	Page\par \#2\newpage
 	Page\par \#3\newpage
 	Page\par \#4\newpage
