@@ -8,16 +8,12 @@
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
 \usepackage{adjustbox}
-
+\input{src/how-to-consensus-zine/flow-chart-only.tex}%
 \parskip1em
 \begin{document}
-	\sffamily\fontsize{60}{80}\selectfont
+
 	\centering
-	\begin{center}
-		\adjustbox{max width=\textwidth, max height=0.9\textheight}{%
-			\input{src/how-to-consensus-zine/flow-chart-only.tex}%
-		}
-	\end{center}
+	\consensusflowchart{0.5}{\footnotesize}  \newpage% Smaller version
 	Page\par \#2\newpage
 	Page\par \#3\newpage
 	Page\par \#4\newpage

@@ -1,4 +1,4 @@
-\documentclass[tikz,border=10pt]{standalone}
+\documentclass{article}
 \usepackage{geometry}
 \geometry{
 	paperwidth=2.75in,
@@ -6,7 +6,7 @@
 }
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
-
-\begin{document}
 \input{flow-chart-only.tex}
+\begin{document}
+	\centering \consensusflowchart{0.5}{\footnotesize}    \newpage
 \end{document}
