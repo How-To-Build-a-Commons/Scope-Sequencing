@@ -10,6 +10,9 @@
 \usepackage{adjustbox}
 \input{src/how-to-consensus-zine/flow-chart-only.tex}%
 \parskip1em
+\usepackage{fancyhdr}
+\fancyfoot{} % clear all footer fields
+
 \begin{document}
 
 	\centering
@@ -19,6 +22,6 @@
 	Page\par \#4\newpage
 	Page\par \#5\newpage
 	Page\par \#6\newpage
-	Back\par Cover \newpage
-	Front\par Cover\newpage
+	Back\par Cover \thispagestyle{empty} \newpage
+	Front\par Cover \thispagestyle{empty} \newpage
 \end{document}
