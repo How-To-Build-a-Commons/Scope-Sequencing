@@ -35,6 +35,11 @@
 % Set the value
 \newlength{\mylen}
 \setlength{\mylen}{0.25in}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+\input{src/how-to-consensus-zine/flow-chart-only.tex}%
+
 % --- Add corner image depending on odd/even page ---
 \newcommand{\AddCornerImage}{%
 	\AddToShipoutPictureBG{%
@@ -78,7 +83,7 @@
 
 \newcommand{\linedpagetwo}{%
 	\noindent
-	\foreach \n in {1,...,30}{%
+	\foreach \n in {1,...,15}{%
 		\rule{\textwidth}{0.4pt}\\[\baselineskip]
 	}
 }
@@ -240,6 +245,7 @@ A consensus meeting needs some structure to function. When running a meeting the
 \pagebreak
 
 
+\centering \consensusflowchart{0.9}{\footnotesize}
 
 \linedpagetwo
 
@@ -263,6 +269,7 @@ From the Yana Ludwig reading:
 \pagebreak
 
 
+\linedpagetwo
 
 \linedpagetwo
 
@@ -385,6 +392,7 @@ Within a Commons, once the external entity has been assigned Private Property ri
 
 \linedpagetwo
 
+\linedpagetwo
 
 \pagebreak
 
