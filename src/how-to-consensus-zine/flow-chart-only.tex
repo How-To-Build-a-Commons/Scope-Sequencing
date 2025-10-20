@@ -3,16 +3,17 @@
 % Example: \consensusflowchart{0.8}{\small}
 \newcommand{\consensusflowchart}[2]{%
 	\begin{tikzpicture}[
-		node distance=1.5cm,
-		scale=#1,
-		transform shape,
-		every node/.style={font=#2},
-		process/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white, text width=3cm},
-		decision/.style={diamond, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=gray!20, aspect=2},
-		endpoint/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=white},
-		block/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=red, fill=white, text=red, line width=1pt},
-		consensus/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=green!60!black, fill=white, text=green!60!black, line width=1pt},
-		arrow/.style={thick,->,>=Stealth}
+    node distance=1.5cm,
+scale=#1,
+transform shape,
+every node/.style={font=#2},
+xshift=-2cm,
+process/.style={rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white, text width=3cm},
+decision/.style={diamond, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=gray!20, aspect=2},
+endpoint/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=black, fill=white},
+block/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=red, fill=white, text=red, line width=1pt},
+consensus/.style={rectangle, minimum width=2.5cm, minimum height=1cm, text centered, draw=green!60!black, fill=white, text=green!60!black, line width=1pt},
+arrow/.style={thick,->,>=Stealth}
 		]
 		% Nodes
 		\node (discussion) [process] {Discussion};
@@ -41,8 +42,8 @@
 		\draw [arrow] (standAside) -- (consensusAchieved);
 		
 		% Curved arrows
-		\draw [arrow] (no) to[out=120, in=180] (discussion);
-		\draw [arrow] (modification) to[out=90, in=-90] (test);
-		\draw [arrow] (blockNode) to[out=140, in=180] (discussion);
+		\draw [arrow, overlay] (no) to[out=120, in=180] (discussion);
+		\draw [arrow, overlay] (modification) to[out=90, in=-90] (test);
+		\draw [arrow, overlay] (blockNode) to[out=140, in=180] (discussion);
 	\end{tikzpicture}%
 }
