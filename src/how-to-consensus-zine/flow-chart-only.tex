@@ -34,14 +34,15 @@
 		\draw [arrow] (test) -- (no);
 		\draw [arrow] (yes) -- (consensusAchieved);
 		\draw [arrow] (no) -- (concerns);
-		\draw [arrow] (modification) -- (standAside);
+		\draw [arrow] (concerns) -- (modification);
 		\draw [arrow] (concerns) -- (blockNode);
 		\draw [arrow] (consensusAchieved) -- (actionPoints);
 		\draw [arrow] (concerns) -- (standAside);
 		\draw [arrow] (standAside) -- (consensusAchieved);
 		
 		% Curved arrows
-		\draw [arrow] (no) to[out=120, in=180] (discussion);
-		\draw [arrow] (modification) to[out=90, in=0] (test);
+		\draw [arrow, overlay] (no) to[out=120, in=180] (discussion);
+		\draw [arrow, overlay] (modification) to[out=90, in=-90] (test);
+		\draw [arrow, overlay] (blockNode) to[out=150, in=180] (discussion);
 	\end{tikzpicture}%
 }
